@@ -31,7 +31,7 @@ To me it also becomes less error prone, know that I have copy and pasted the abo
 
 .. code:: csharp
 
-    transform.position = transform.position.WithZ(0);
+    transform.position = transform.position.ChangeZ(0);
 
 Not all that much difference but do it several times and it's kinda convenient.
 The following shows how to set it up.
@@ -41,15 +41,15 @@ The following shows how to set it up.
     using UnityEngine;
 
     public static class VectorExtensions {
-        public static Vector3 WithX(this Vector3 vector, float x) {
+        public static Vector3 ChangeX(this Vector3 vector, float x) {
             return new Vector3(x, vector.y, vector.z);
         }
 
-        public static Vector3 WithY(this Vector3 vector, float y) {
+        public static Vector3 ChangeY(this Vector3 vector, float y) {
             return new Vector3(vector.x, y, vector.z);
         }
 
-        public static Vector3 WithZ(this Vector3 vector, float z) {
+        public static Vector3 ChangeZ(this Vector3 vector, float z) {
             return new Vector3(vector.x, vector.y, z);
         }
     }
